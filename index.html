@@ -1,0 +1,142 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Illusion Hub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #06070b;
+      color: #e5e7eb;
+      overflow-x: hidden;
+    }
+
+    section {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      padding: 40px 20px;
+    }
+
+    /* --- ILLUSION BACKGROUND --- */
+    .bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background: radial-gradient(circle at 20% 20%, rgba(99,102,241,0.15), transparent 40%),
+                  radial-gradient(circle at 80% 80%, rgba(34,211,238,0.12), transparent 45%),
+                  radial-gradient(circle at 50% 50%, rgba(139,92,246,0.08), transparent 55%);
+      filter: blur(40px);
+      animation: drift 20s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift {
+      from { transform: scale(1) translateY(0); }
+      to { transform: scale(1.1) translateY(-40px); }
+    }
+
+    /* --- HERO --- */
+    .hero h1 {
+      font-size: clamp(3rem, 8vw, 5rem);
+      font-weight: 700;
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: fadeUp 1.5s ease forwards;
+    }
+
+    .hero p {
+      margin-top: 14px;
+      font-size: 1.1rem;
+      opacity: 0.7;
+      animation: fadeUp 1.5s ease forwards;
+      animation-delay: 0.2s;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* --- DISCORD SECTION --- */
+    .discord {
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .discord-logo {
+      font-size: 4rem;
+      filter: drop-shadow(0 0 25px rgba(88,101,242,0.6));
+      animation: float 4s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-15px); }
+    }
+
+    .discord h2 {
+      font-size: 2.2rem;
+      font-weight: 600;
+    }
+
+    .discord-btn {
+      margin-top: 10px;
+      padding: 16px 34px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      text-decoration: none;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #5865F2, #4752c4);
+      box-shadow: 0 10px 30px rgba(88,101,242,0.4);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .discord-btn:hover {
+      transform: translateY(-4px) scale(1.05);
+      box-shadow: 0 20px 45px rgba(88,101,242,0.65);
+    }
+
+    /* --- FOOTER / SOON --- */
+    .soon h3 {
+      font-size: 1.8rem;
+      opacity: 0.85;
+      margin-bottom: 10px;
+    }
+
+    .soon span {
+      font-size: 0.9rem;
+      opacity: 0.4;
+    }
+
+  </style></head>
+<body>  <div class="bg"></div>  <section class="hero">
+    <div>
+      <h1>Illusion Hub</h1>
+      <p>Not everything is what it seems.</p>
+    </div>
+  </section>  <section class="discord">
+    <div class="discord-logo">🟣</div>
+    <h2>Join Our Discord!</h2>
+    <a class="discord-btn" href="https://discord.gg/pDapzcrj6q" target="_blank" rel="noopener noreferrer">
+      Enter the Hub
+    </a>
+  </section>  <section class="soon">
+    <div>
+      <h3>Adding more things soon!</h3>
+      <span>by Silent</span>
+    </div>
+  </section></body>
+</html>
